@@ -12,12 +12,6 @@ class MyDocument extends Document {
     });
 
     const initialProps = await Document.getInitialProps(ctx);
-    console.log(initialProps);
-    console.log(initialProps.styles);
-    console.log(React.Children.toArray(initialProps.styles));
-
-    console.log(sheets);
-    console.log(sheets.getStyleElement());
 
     return{
       ...initialProps,
@@ -27,7 +21,6 @@ class MyDocument extends Document {
   
   public render() {
 
-    console.log('rendered on the server');
 
     return(
       <Html lang="en">
