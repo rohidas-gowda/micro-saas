@@ -17,6 +17,8 @@ class Index extends React.Component<Props> {
 
     const user = await getUserApiMethod(req);
 
+    console.log(user);
+
     return { ...user };
   }
 
@@ -61,6 +63,7 @@ class Index extends React.Component<Props> {
       > 
         Test Confirmer and Notifier
         </Button>
+        <p>Email: {this.props.user.email}</p>
         </div>
         </Layout>
     );
