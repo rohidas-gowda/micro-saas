@@ -46,11 +46,11 @@ interface UserModel extends mongoose.Model<UserDocument> {
 class UserClass extends mongoose.Model {
   public static async getUserBySlug({ slug }) {
     console.log('static method');
-    return this.findOne({ slug }, 'emaildisplayName').setOptions({ lean: true })
+    return this.findOne({ slug }, 'email displayName').setOptions({ lean: true })
   }
 
   public static async updateProfile({ userId, name, avatarUrl }){
-    const user = await this.findById(userId, 'slugdisplayName');
+    const user = await this.findById(userId, 'slug displayName');
 
     const modifier = { displayName: user.displayName, avatarUrl, slug: user.slug };
 
