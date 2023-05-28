@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -20,20 +19,18 @@ function App() {
 
     const data = await response.json();
 
-    console.log(data);
+    if(data.user) {
+      alert('Login successful')
+      window.location.href = '/quote'
+    } else {
+      alert('Please check your username and password')
+    }
   }
 
   return (
     <div>
-      <h1>Register</h1>
-      <form onSubmit={registerUser}>
-        <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        type="text"
-        placeholder="Name" 
-        />
-        <br />
+      <h1>Login</h1>
+      <form onSubmit={loginUser}>
         <input
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -48,7 +45,7 @@ function App() {
         placeholder="Password" 
         />
         <br />
-        <input type='submit' value="Register" />
+        <input type='submit' value="Login" />
       </form>
     </div>
   );
