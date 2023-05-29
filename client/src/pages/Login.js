@@ -21,7 +21,7 @@ function App() {
 
     if(data.user) {
       alert('Login successful')
-      window.location.href = '/quote'
+      window.location.href = '/dashboard'
     } else {
       alert('Please check your username and password')
     }
